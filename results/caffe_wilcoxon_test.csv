@@ -1,0 +1,2 @@
+Project,Metric,Runs,Statistic,p_value,Effect_size_r,Significant_at_alpha,Alpha,Baseline_PosF1_mean,Proposed_PosF1_mean,Delta_Proposed_minus_Baseline
+caffe,Positive-class F1,30,83.0,0.0014574769884347916,0.5614095478489884,True,0.05,0.29920409191468317,0.36949722905134136,0.07029313713665811

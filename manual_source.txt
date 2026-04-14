@@ -1,0 +1,39 @@
+ISE Coursework Artifact: manual.pdf
+
+Purpose
+This tool evaluates bug report classification performance for software project issue datasets.
+It compares a baseline (Naive Bayes + TF-IDF) against a proposed model (Logistic Regression + TF-IDF).
+
+Dataset format
+Input files are expected under datasets/ as CSV files with at least these columns:
+- Title
+- Body
+- class (binary labels: 0/1)
+
+Main commands
+1) Baseline model
+   .venv/bin/python baseline_nb.py --project pytorch --repeats 30
+
+2) Proposed model
+   .venv/bin/python classification.py --project pytorch --repeats 30
+
+3) Combined summary table
+   .venv/bin/python combine_results.py --project pytorch
+
+4) Statistical significance test
+   .venv/bin/python stats_test.py --project pytorch
+
+5) End-to-end pipeline for all projects
+   .venv/bin/python run_pipeline.py --projects pytorch tensorflow keras incubator-mxnet caffe --repeats 30
+
+Configurable options
+- --project: target dataset name (or all for combine/stats scripts)
+- --repeats: number of repeated train/test runs
+- --test-size: holdout split proportion
+- --max-features: TF-IDF max feature count
+- --seed-base: base random seed
+- --results-dir: output folder (default: results)
+
+Outputs
+For each project, the tool writes model summaries, per-run positive-class F1 arrays,
+combined report tables, and Wilcoxon test statistics to results/.

@@ -1,0 +1,24 @@
+ISE Coursework Artifact: requirements.pdf
+
+Python runtime
+- Python 3.11.x (tested with Python 3.11.13)
+
+Core dependencies
+- pandas >= 1.5.0
+- numpy >= 1.23.0
+- scikit-learn >= 1.2.0
+- nltk >= 3.8.0
+- scipy >= 1.10.0
+
+Environment assumptions
+- macOS/Linux shell with Python available
+- Write permission for repository root and results/ directory
+
+Installation commands
+1. python3.11 -m venv .venv
+2. source .venv/bin/activate
+3. pip install -r requirements.txt
+
+Notes
+- The pipeline uses NLTK stopwords when available and falls back to an internal list offline.
+- Statistical tests in stats_test.py require scipy.

@@ -1,0 +1,86 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 1 /Kids [4 0 R] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 847 >>
+stream
+BT
+/F1 10 Tf
+50 800 Td
+14 TL
+(ISE Coursework Artifact: requirements.pdf) Tj
+T*
+() Tj
+T*
+(Python runtime) Tj
+T*
+(- Python 3.11.x \(tested with Python 3.11.13\)) Tj
+T*
+() Tj
+T*
+(Core dependencies) Tj
+T*
+(- pandas >= 1.5.0) Tj
+T*
+(- numpy >= 1.23.0) Tj
+T*
+(- scikit-learn >= 1.2.0) Tj
+T*
+(- nltk >= 3.8.0) Tj
+T*
+(- scipy >= 1.10.0) Tj
+T*
+() Tj
+T*
+(Environment assumptions) Tj
+T*
+(- macOS/Linux shell with Python available) Tj
+T*
+(- Write permission for repository root and results/ directory) Tj
+T*
+() Tj
+T*
+(Installation commands) Tj
+T*
+(1. python3.11 -m venv .venv) Tj
+T*
+(2. source .venv/bin/activate) Tj
+T*
+(3. pip install -r requirements.txt) Tj
+T*
+() Tj
+T*
+(Notes) Tj
+T*
+(- The pipeline uses NLTK stopwords when available and falls back to an internal list ) Tj
+T*
+(offline.) Tj
+T*
+(- Statistical tests in stats_test.py require scipy.) Tj
+T*
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000185 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1209
+%%EOF

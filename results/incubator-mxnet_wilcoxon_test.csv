@@ -1,0 +1,2 @@
+Project,Metric,Runs,Statistic,p_value,Effect_size_r,Significant_at_alpha,Alpha,Baseline_PosF1_mean,Proposed_PosF1_mean,Delta_Proposed_minus_Baseline
+incubator-mxnet,Positive-class F1,30,0.0,1.862645149230957e-09,0.8730951162199987,True,0.05,0.3685664017363011,0.583710987693293,0.2151445859569917

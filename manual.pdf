@@ -1,0 +1,120 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 1 /Kids [4 0 R] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 1739 >>
+stream
+BT
+/F1 10 Tf
+50 800 Td
+14 TL
+(ISE Coursework Artifact: manual.pdf) Tj
+T*
+() Tj
+T*
+(Purpose) Tj
+T*
+(This tool evaluates bug report classification performance for software project issue ) Tj
+T*
+(datasets.) Tj
+T*
+(It compares a baseline \(Naive Bayes + TF-IDF\) against a proposed model \(Logistic Regression ) Tj
+T*
+(+ TF-IDF\).) Tj
+T*
+() Tj
+T*
+(Dataset format) Tj
+T*
+(Input files are expected under datasets/ as CSV files with at least these columns:) Tj
+T*
+(- Title) Tj
+T*
+(- Body) Tj
+T*
+(- class \(binary labels: 0/1\)) Tj
+T*
+() Tj
+T*
+(Main commands) Tj
+T*
+(1\) Baseline model) Tj
+T*
+(   .venv/bin/python baseline_nb.py --project pytorch --repeats 30) Tj
+T*
+() Tj
+T*
+(2\) Proposed model) Tj
+T*
+(   .venv/bin/python classification.py --project pytorch --repeats 30) Tj
+T*
+() Tj
+T*
+(3\) Combined summary table) Tj
+T*
+(   .venv/bin/python combine_results.py --project pytorch) Tj
+T*
+() Tj
+T*
+(4\) Statistical significance test) Tj
+T*
+(   .venv/bin/python stats_test.py --project pytorch) Tj
+T*
+() Tj
+T*
+(5\) End-to-end pipeline for all projects) Tj
+T*
+(   .venv/bin/python run_pipeline.py --projects pytorch tensorflow keras incubator-mxnet ) Tj
+T*
+(caffe --repeats 30) Tj
+T*
+() Tj
+T*
+(Configurable options) Tj
+T*
+(- --project: target dataset name \(or all for combine/stats scripts\)) Tj
+T*
+(- --repeats: number of repeated train/test runs) Tj
+T*
+(- --test-size: holdout split proportion) Tj
+T*
+(- --max-features: TF-IDF max feature count) Tj
+T*
+(- --seed-base: base random seed) Tj
+T*
+(- --results-dir: output folder \(default: results\)) Tj
+T*
+() Tj
+T*
+(Outputs) Tj
+T*
+(For each project, the tool writes model summaries, per-run positive-class F1 arrays,) Tj
+T*
+(combined report tables, and Wilcoxon test statistics to results/.) Tj
+T*
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000185 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+2102
+%%EOF

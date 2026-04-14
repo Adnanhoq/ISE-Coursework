@@ -1,0 +1,116 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 1 /Kids [4 0 R] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 1744 >>
+stream
+BT
+/F1 10 Tf
+50 800 Td
+14 TL
+(ISE Coursework Artifact: replication.pdf) Tj
+T*
+() Tj
+T*
+(Goal) Tj
+T*
+(Replicate all reported experiments and statistical tests from raw datasets.) Tj
+T*
+() Tj
+T*
+(Exact replication steps) Tj
+T*
+(1\) Set up environment) Tj
+T*
+(   python3.11 -m venv .venv) Tj
+T*
+(   source .venv/bin/activate) Tj
+T*
+(   pip install -r requirements.txt) Tj
+T*
+() Tj
+T*
+(2\) Run full pipeline) Tj
+T*
+(   .venv/bin/python run_pipeline.py --projects pytorch tensorflow keras incubator-mxnet ) Tj
+T*
+(caffe --repeats 30 --test-size 0.3 --max-features 1000 --seed-base 0) Tj
+T*
+() Tj
+T*
+(3\) Verify generated files) Tj
+T*
+(   Expected per-project files:) Tj
+T*
+(   - results/<project>_NB.csv) Tj
+T*
+(   - results/<project>_LR.csv) Tj
+T*
+(   - results/<project>_combined_results.csv) Tj
+T*
+(   - results/<project>_wilcoxon_test.csv) Tj
+T*
+(   - results/<project>_NB_pos_f1.npy) Tj
+T*
+(   - results/<project>_LR_pos_f1.npy) Tj
+T*
+() Tj
+T*
+(   Expected cross-project files:) Tj
+T*
+(   - results/all_projects_combined_results.csv) Tj
+T*
+(   - results/all_projects_wilcoxon_test.csv) Tj
+T*
+() Tj
+T*
+(Determinism and randomness) Tj
+T*
+(- Data shuffling uses fixed random state 999.) Tj
+T*
+(- Train/test split seeds are deterministic per repeat: seed_base + repeat index.) Tj
+T*
+(- For Logistic Regression, random_state is set per repeat.) Tj
+T*
+() Tj
+T*
+(Hardware/runtime note) Tj
+T*
+(- Runtime depends on CPU and dataset size.) Tj
+T*
+(- The baseline model uses 5-fold GridSearchCV inside each repeat and may take longer.) Tj
+T*
+() Tj
+T*
+(Troubleshooting) Tj
+T*
+(- If NLTK stopwords are unavailable, the tool automatically uses a built-in fallback list.) Tj
+T*
+(- If scipy import fails, reinstall dependencies using requirements.txt.) Tj
+T*
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000185 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+2107
+%%EOF

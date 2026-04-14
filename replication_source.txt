@@ -1,0 +1,39 @@
+ISE Coursework Artifact: replication.pdf
+
+Goal
+Replicate all reported experiments and statistical tests from raw datasets.
+
+Exact replication steps
+1) Set up environment
+   python3.11 -m venv .venv
+   source .venv/bin/activate
+   pip install -r requirements.txt
+
+2) Run full pipeline
+   .venv/bin/python run_pipeline.py --projects pytorch tensorflow keras incubator-mxnet caffe --repeats 30 --test-size 0.3 --max-features 1000 --seed-base 0
+
+3) Verify generated files
+   Expected per-project files:
+   - results/<project>_NB.csv
+   - results/<project>_LR.csv
+   - results/<project>_combined_results.csv
+   - results/<project>_wilcoxon_test.csv
+   - results/<project>_NB_pos_f1.npy
+   - results/<project>_LR_pos_f1.npy
+
+   Expected cross-project files:
+   - results/all_projects_combined_results.csv
+   - results/all_projects_wilcoxon_test.csv
+
+Determinism and randomness
+- Data shuffling uses fixed random state 999.
+- Train/test split seeds are deterministic per repeat: seed_base + repeat index.
+- For Logistic Regression, random_state is set per repeat.
+
+Hardware/runtime note
+- Runtime depends on CPU and dataset size.
+- The baseline model uses 5-fold GridSearchCV inside each repeat and may take longer.
+
+Troubleshooting
+- If NLTK stopwords are unavailable, the tool automatically uses a built-in fallback list.
+- If scipy import fails, reinstall dependencies using requirements.txt.
